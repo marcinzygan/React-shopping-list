@@ -7,3 +7,4 @@
 - useEffect to clear alert after 3 seconds
 - Clear all list items
 - Remove item from list
+- Edit items , focus input field on editing

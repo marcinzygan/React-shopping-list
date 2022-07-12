@@ -16,6 +16,18 @@ function App() {
       showAlert(true, "please enter item", "danger");
     } else if (name && isEditing) {
       // deal with edit
+
+      setList(
+        list.map((item) => {
+          if (item.id === editID) {
+            return { ...item, title: name };
+          }
+          return item;
+        })
+      );
+      setIsEditing(false);
+      showAlert(true, "item edited", "success");
+      setName("");
     } else {
       //show alert
       showAlert(true, "item added to the list", "success");
@@ -58,7 +70,20 @@ function App() {
     setList(newList);
     showAlert(true, "item removed", "danger");
   };
+  // Edit item
+  const editItem = function (id) {
+    const editedItem = list.find((item) => {
+      console.log(item.id);
+      console.log(id);
+      return item.id === id;
+    });
+    console.log(editedItem);
 
+    setIsEditing(true);
+    setEditID(id);
+    setName(editedItem.title);
+    document.getElementById("input").focus();
+  };
   return (
     <section className="section-center">
       <form className="grocery-form" onSubmit={handleSubmit}>
@@ -66,6 +91,7 @@ function App() {
         <h3>Task Organizer</h3>
         <div className="form-control">
           <input
+            id="input"
             type="text"
             className="grocery"
             placeholder="e.g buy eggs"
@@ -79,7 +105,7 @@ function App() {
       </form>
       {list.length > 0 && (
         <div className="grocery-container">
-          <List items={list} removeItem={removeItem} />
+          <List items={list} removeItem={removeItem} editItem={editItem} />
           <button className="clear-btn" onClick={clearList}>
             clear items
           </button>
