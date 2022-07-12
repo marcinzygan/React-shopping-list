@@ -3,4 +3,7 @@
 - Conditionally render List component only when list state has items
 - Display alert when user try to add item with empty value
 - Conditionally render className for alert "sucess" and "danger"
--
+- Conditionally display alert message
+- useEffect to clear alert after 3 seconds
+- Clear all list items
+- Remove item from list
