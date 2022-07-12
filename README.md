@@ -8,3 +8,4 @@
 - Clear all list items
 - Remove item from list
 - Edit items , focus input field on editing
+- Local storage

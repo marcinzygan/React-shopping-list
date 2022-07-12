@@ -2,13 +2,23 @@ import React, { useState, useEffect } from "react";
 import List from "./List";
 import Alert from "./Alert";
 
+const getLocalStorage = function () {
+  let list = localStorage.getItem("task");
+  if (list) {
+    return JSON.parse(localStorage.getItem("task"));
+  } else {
+    return [];
+  }
+};
+
 function App() {
   const [name, setName] = useState("");
-  const [list, setList] = useState([]);
+  const [list, setList] = useState(getLocalStorage());
   const [isEditing, setIsEditing] = useState(false);
   const [editID, setEditID] = useState(null);
   const [alert, setAlert] = useState({ show: false, msg: "", type: "" });
 
+  //submit form
   const handleSubmit = function (e) {
     e.preventDefault();
     if (!name) {
@@ -26,6 +36,7 @@ function App() {
         })
       );
       setIsEditing(false);
+      setEditID(null);
       showAlert(true, "item edited", "success");
       setName("");
     } else {
@@ -73,17 +84,21 @@ function App() {
   // Edit item
   const editItem = function (id) {
     const editedItem = list.find((item) => {
-      console.log(item.id);
-      console.log(id);
       return item.id === id;
     });
-    console.log(editedItem);
 
     setIsEditing(true);
     setEditID(id);
     setName(editedItem.title);
     document.getElementById("input").focus();
   };
+
+  //Add items to local storage
+
+  useEffect(() => {
+    localStorage.setItem("task", JSON.stringify(list));
+  }, [list]);
+
   return (
     <section className="section-center">
       <form className="grocery-form" onSubmit={handleSubmit}>
