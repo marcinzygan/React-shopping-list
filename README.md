@@ -1,0 +1,6 @@
+- Added UseState for itemName , list , isEditing , editID , alert
+- Add item to the list
+- Conditionally render List component only when list state has items
+- Display alert when user try to add item with empty value
+- Conditionally render className for alert "sucess" and "danger"
+-
