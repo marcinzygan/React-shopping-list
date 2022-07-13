@@ -1,6 +1,6 @@
 👋 Hi, I’m @marcinzygan
 
-# This is React Practice Project "React Task Organizer"
+# This is React Practice Project "React Shopping List"
 
 - This Project was done as a practice project for React
 - Made with React
