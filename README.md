@@ -1,3 +1,13 @@
+👋 Hi, I’m @marcinzygan
+
+# This is React Practice Project "React Task Organizer"
+
+- This Project was done as a practice project for React
+- Made with React
+- The HTML and CSS was provided .
+
+# Features implemented :
+
 - Added UseState for itemName , list , isEditing , editID , alert
 - Add item to the list
 - Conditionally render List component only when list state has items
@@ -9,3 +19,8 @@
 - Remove item from list
 - Edit items , focus input field on editing
 - Local storage
+
+# This project is Live <a href="https://mz-react-color-generator.netlify.app">Here</a> ! Enjoy .
+
+- Have a nice day 🌞
+- 📫 Find me on <a href="https://marcin-zygan.com">marcin-zygan.com</a>

@@ -2,10 +2,12 @@ import React, { useState, useEffect } from "react";
 import List from "./List";
 import Alert from "./Alert";
 
+// get local storage
 const getLocalStorage = function () {
   let list = localStorage.getItem("task");
+
   if (list) {
-    return JSON.parse(localStorage.getItem("task"));
+    return JSON.parse(list);
   } else {
     return [];
   }
