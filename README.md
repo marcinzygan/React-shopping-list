@@ -20,7 +20,7 @@
 - Edit items , focus input field on editing
 - Local storage
 
-# This project is Live <a href="mz-task-organizer.netlify.app">Here</a> ! Enjoy .
+# This project is Live <a href="https://mz-task-organizer.netlify.app">Here</a> ! Enjoy .
 
 - Have a nice day 🌞
 - 📫 Find me on <a href="https://marcin-zygan.com">marcin-zygan.com</a>
